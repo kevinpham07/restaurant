@@ -1,0 +1,17 @@
+<input type="button" class="btn btn-success" [routerLink]="['/restaurants/new']" value="new restaurant">
+<table class="table table-border table-striped">
+	<thead>
+		<tr>
+			<th>restaurant</th>
+			<th>cuisine</th>
+			<th>actions available</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let rest of restaurants">
+			<td>{{ rest.name }}</td>
+			<td>{{ rest.cuisine }}</td>
+			<td><input [routerLink]="['/restaurants', rest._id]" class="btn btn-secondary ml-1 mr-1" value="read reviews"><input [routerLink]="['/restaurants', rest._id, 'edit']" class="btn btn-warning ml-1 mr-1" value="update"><input [routerLink]="['/restaurants', rest._id, 'delete']" class="btn btn-danger ml-1 mr-1" value="delete"></td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,28 @@
+<h3>write a review for {{ Review.name }}</h3>
+<form (submit)="onReviewFromService()">	
+	<div *ngIf="errors">
+		<h3>{{ errors.message }}</h3>
+	</div>
+	<div>
+		<label>your name:</label>
+		<input type="text" name="Review.name" [(ngModel)]="Review.name">
+	</div>
+	<div>
+		<label>Stars:</label>
+		<select name="Review.stars" [(ngModel)]="Review.stars">
+			<option selected value="1">1 star</option>
+			<option value="2">2 star</option>
+			<option value="3">3 star</option>
+			<option value="4">4 star</option>
+			<option value="5">5 star</option>
+		</select>
+	</div>
+	<div>
+		<p>your review:</p>
+		<input type="text" name="Review.review" [(ngModel)]="Review.review">
+	</div>
+	<div class="row mt-3 ml-3">
+		<input [routerLink]="['/restaurants', id]" type="button" class="btn btn-primary" value="cancel">
+		<input type="submit" class="btn btn-primary ml-5" value="submit">
+	</div>
+</form>

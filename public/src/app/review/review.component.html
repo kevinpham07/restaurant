@@ -1,0 +1,17 @@
+<input type="button" class="btn btn-success" [routerLink]="['/restaurants', id , 'new']" value="new review"><input type="button" class="btn btn-success ml-5" [routerLink]="['/restaurants']" value="back to restaurants">
+<table class="table table-border table-striped">
+	<thead>
+		<tr>
+			<th>customer</th>
+			<th>stars</th>
+			<th>description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let review of reviews">
+			<td>{{ review.name }}</td>
+			<td>{{ review.stars }} stars</td>
+			<td>{{ review.review }}</td>
+		</tr>
+	</tbody>
+</table>

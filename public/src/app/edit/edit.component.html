@@ -1,0 +1,14 @@
+<h3>edit a restaurant</h3>
+<form (submit)="onEditFromService()">	
+	<div *ngIf="errors">
+		<h3>{{ errors.message }}</h3>
+	</div>
+	<p>restaurant name:</p>
+	<input type="text" name="Restaurant.name" [(ngModel)]="Restaurant.name">
+	<p>cuisine:</p>
+	<input type="text" name="Restaurant.cuisine" [(ngModel)]="Restaurant.cuisine">
+	<div class="row mt-3 ml-3">
+		<input [routerLink]="['/restaurants']" type="button" class="btn btn-primary" value="cancel">
+		<input type="submit" class="btn btn-primary ml-5" value="edit">
+	</div>
+</form>
